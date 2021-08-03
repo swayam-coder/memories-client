@@ -1,0 +1,43 @@
+/* html{
+    background: url("https://i.pinimg.com/originals/68/45/03/6845030d01787f4e6ea060a82274d1cf.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+} */
+
+.signup {
+    text-align: center;
+}
+
+.small {
+    display: block;
+    margin-top: 10px;
+}
+
+.authBackground {
+    display: block;
+    position: relative;
+    background-color: #212529;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* .authBackground::after{
+    content: "";
+    background-color: #212529;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-size: cover;
+    z-index: -1; 
+} */
+
+.Label {
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+}

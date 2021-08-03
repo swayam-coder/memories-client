@@ -1,0 +1,31 @@
+@import "../../sass-styles/variables";
+@import "../../sass-styles/functions";
+@import "../../sass-styles/mixins";
+
+label {
+  display: block;
+}
+
+.authbackground {
+  &_dark {
+    @include authbackground;
+    background-color: get-color("dark");
+  }
+  &_light {
+    @include authbackground;
+    background-color: get-color("light");
+  }
+}
+
+.Label {
+    margin-top: 10px;
+}
+
+.signup {
+    text-align: center;
+}
+
+.small {
+    display: block;
+    margin-top: 10px;
+}

@@ -1,0 +1,33 @@
+label {
+  display: block;
+}
+
+.authbackground_dark {
+  display: block;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #212529;
+}
+
+.authbackground_light {
+  display: block;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: white;
+}
+
+.Label {
+  margin-top: 10px;
+}
+
+.signup {
+  text-align: center;
+}
+
+.small {
+  display: block;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=Auth.css.map */

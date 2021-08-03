@@ -1,0 +1,13 @@
+.desc {
+  &section {
+    display: flex;
+  }
+  @media all and (min-width: 992px) {
+    &section {
+      height: 100vh;
+    }
+  }
+  &content {
+    margin: auto;
+  }
+}

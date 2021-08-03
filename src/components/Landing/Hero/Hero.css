@@ -1,0 +1,23 @@
+.hero {
+  background-color: #212529;
+}
+
+.herocontainer {
+  background-color: #212529;
+}
+
+.herocontent h1,
+.herocontent p {
+  color: white;
+}
+
+@media all and (min-width: 992px) {
+  .herocontainer {
+    height: 100vh;
+  }
+}
+
+.herodetails {
+  margin-top: auto;
+}
+/*# sourceMappingURL=Hero.css.map */

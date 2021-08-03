@@ -1,0 +1,62 @@
+* {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.creator {
+    position: relative;
+    bottom: 270px;
+    color: white;
+    margin: 18px;
+    display: inline;
+}
+
+.title-tags{
+    display: flex;
+    justify-content: space-between;
+}
+
+.createdOn {
+    position: relative;
+    bottom: 260px;
+    color: white;
+    display: block;
+    margin: 0px 20px;
+}
+
+.col-sm-4{
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.inputForm{
+    width: 80%;
+    margin: auto;
+}
+
+.card {
+    width: 18rem;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.buttons > Button{
+    margin: 10px;
+}
+
+.brandName {
+    text-decoration: none;
+}
+
+.brandName > h2 {
+    color: white;
+    margin-bottom: 0px;
+}
+
+@media all and (max-width: 540px) {
+    .main {
+        flex-direction: column-reverse;
+    }
+}

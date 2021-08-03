@@ -1,0 +1,9 @@
+@import 'variables';
+@import 'functions';
+
+@mixin authbackground {
+    display: block;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}

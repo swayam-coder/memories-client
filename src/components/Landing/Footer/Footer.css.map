@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,cAAc,CAAC;EACb,gBAAgB,EEFN,OAAO;CFGlB",
+    "sources": [
+        "Footer.scss",
+        "../../../sass-styles/_functions.scss",
+        "../../../sass-styles/_variables.scss"
+    ],
+    "names": [],
+    "file": "Footer.css"
+}

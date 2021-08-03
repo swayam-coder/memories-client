@@ -1,0 +1,22 @@
+@import "../../../sass-styles/functions";
+
+.hero {
+  background-color: get-color("dark");
+  &container {
+    background-color: get-color("dark");
+  }
+  &content {
+    h1,
+    p {
+      color: get-color("light");
+    }
+  }
+  @media all and (min-width: 992px) {
+    &container {
+      height: 100vh;
+    }
+  }
+  &details {
+    margin-top: auto;
+  }
+}

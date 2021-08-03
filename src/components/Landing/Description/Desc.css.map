@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACG,AAAD,YAAQ,CAAC;EACP,OAAO,EAAE,IAAI;CACd;;AACD,MAAM,CAAC,GAAG,MAAM,SAAS,EAAE,KAAK;EAC7B,AAAD,YAAQ,CAAC;IACP,MAAM,EAAE,KAAK;GACd;;;AAEF,AAAD,YAAQ,CAAC;EACP,MAAM,EAAE,IAAI;CACb",
+    "sources": [
+        "Desc.scss"
+    ],
+    "names": [],
+    "file": "Desc.css"
+}
