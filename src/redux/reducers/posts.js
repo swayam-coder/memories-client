@@ -1,14 +1,18 @@
+import {FETCH_ALL,FETCH_FEED_ALL, CREATE, UPDATE, DELETE, LIKE} from "../constants/posts";
+
 const postsDetails = (posts = [], action) => {
     switch (action.type) {
-        case "FETCH_ALL":
+        case FETCH_ALL:
             return action.payload;
-        case "CREATE":
+        case FETCH_FEED_ALL:
+            return action.payload;
+        case CREATE:
             return [...posts, action.payload];
-        case "DELETE":
+        case DELETE:
             return posts.filter((p) => {return p._id !== action.payload._id})   //what filter does is it finds the element as per the condition and deletes the rest
-        case "UPDATE":
+        case UPDATE:
             return posts.map((post) => (post._id === action.payload._id ? action.payload : post));  // what does this statement do?
-        case "LIKE": 
+        case LIKE: 
             return posts.map((post) => (post._id === action.payload._id ? action.payload : post)); 
         default:
             return posts;

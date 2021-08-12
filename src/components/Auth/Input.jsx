@@ -49,6 +49,7 @@ export const ConfirmPassword = ({ formData, handleChange, register, errors, isSi
                         {errors.password?.type === "required" && <label id="passwordHelp" class="text-danger">{errors.password?.message}</label>}
                         {errors.password?.type === "min" && <label id="passwordHelp" class="text-danger">{errors.password?.message}</label>}
                         {errors.password?.type === "max" && <label id="passwordHelp" class="text-danger">{errors.password?.message}</label>}
+                        {errors.password?.type === "matches" && <label id="passwordHelp" class="text-danger">{errors.password?.message}</label>}
                     </div>
                     <div className="col-sm-6">
                         {/* {confirmPassword !== null ? (confirmPassword === formData.password ? ValidPassword() : InvalidPassword()) : ValidPassword() }  */}

@@ -25,7 +25,7 @@ export default function Form({currentid, setcurrentid}) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(currentid){
+        if(currentid) {
             dispatch(updatePost(currentid, postData));
             clearForm();
         } else {
@@ -72,7 +72,9 @@ export default function Form({currentid, setcurrentid}) {
 
             <button type="submit" class="btn btn-dark">{currentid ? "Edit": "Add"} Memory</button>
             <button type="button" class="btn btn-warning" style={{marginLeft: 10}} onClick={clearForm}>Clear</button>
+            <small style={{display: "block",marginTop: 15}}>To delete or make changes in your posts go to My Posts section</small>
         </form> 
+        
         </Paper>
         </div>
     )

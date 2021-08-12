@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { NavLink, useLocation, useHistory } from 'react-router-dom'
 
-export default function Navbar() {
+export default function Navbar({User}) {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+
     const history = useHistory();
     const location = useLocation();
     const dispatch = useDispatch();
@@ -24,14 +25,24 @@ export default function Navbar() {
     <div className="container">
     
     <div className="brandLink d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-      <NavLink className="brandName" to="/posts"><h2 className="navbar-brand">Memories</h2></NavLink>
-      <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" className="nav-link px-2 text-white">Your Posts</a></li>
-        <li><a href="#" className="nav-link px-2 text-white">Profile</a></li>
-      </ul>
-      <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-        <input type="search" className="form-control form-control-dark" placeholder="Search..." aria-label="Search" />
-      </form>
+    
+      <NavLink className="brandName" to={user?.result ? "/posts" : "/"}><h2 className="navbar-brand">Memories</h2></NavLink>
+    
+        <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><NavLink to="/myposts" className="nav-link px-2 text-white">{user?.result && "My Posts"}</NavLink></li>
+          <li><NavLink to={`/profile/${User?.id}`} className="nav-link px-2 text-white">{user?.result && "Profile"}</NavLink></li>
+        </ul>
+      {
+        user?.result && 
+        <>
+        <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input list= "users" type="search" className="form-control form-control-dark" placeholder="Search other users..." aria-label="Search" />
+          <datalist id="users" style={{display: "none"}}>
+            <option  />
+          </datalist>
+        </form>
+        </>
+      }
 
       {
         user?.result ? 
@@ -74,7 +85,6 @@ export default function Navbar() {
     </div>
   </div>
 </header>
-
         </div>
     )
 }
