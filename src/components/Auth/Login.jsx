@@ -70,7 +70,7 @@ export default function Login() {
     }
 
     useEffect(() => {
-        if(formData.firstName !== " ") {
+        if(formData.email !== " ") {
             console.log(formData);
             dispatch(login(formData, history))
         }
@@ -106,13 +106,14 @@ export default function Login() {
                 {errors.email?.type === "email" && <label id="passwordHelp" class="text-danger">{errors.email?.message}</label>}
                 {errors.email?.type === "required" && <label id="passwordHelp" class="text-danger">{errors.email?.message}</label>}
                 
-
+                {/* password field */}
                 <label className="form-label Label">Password</label>
                 <div class="input-group">
                     <input type={viewPassword ? "text" : "password"} {...register("password")} className={`form-control ${errors?.password && "is-invalid"}`} />
                     <button class="btn btn-secondary" type="button" id="button-addon2" onClick={() => setViewPassword((viewPassword) => !viewPassword)}>{viewPassword ? <i class="fas fa-eye"></i> : <i class="fas fa-eye-slash"></i>}</button>
                 </div>
                 {errors.password?.type === "required" && <label id="passwordHelp" class="text-danger">{errors.password?.message}</label>}
+                
                 {/* submit button */}
                 <Button type="submit" variant="contained" className={classes.signupButton}>Login</Button>
             </form>

@@ -1,11 +1,33 @@
 import * as api from "../../api";
-import {FETCH_ALL, CREATE, UPDATE, DELETE, LIKE} from "../constants/posts";
+import { FETCH_ALL,FETCH_FEED_ALL, CREATE, UPDATE, DELETE, LIKE } from "../constants/posts";
+
+export const getFeedPosts = () => async (dispatch) => {
+  try {
+      const { data } = await api.fetchFeedPosts();
+      console.log(data);
+
+      if(data.message) {
+        // const { message } = data
+        // dispatch({type: "AUTH-WARNING", message})
+        console.log(data.message);
+      }
+      dispatch({type: FETCH_FEED_ALL, payload: data});
+  } catch (error) {
+      console.log(error);
+  }
+}
 
 export const getPosts = () => async (dispatch) => {
     try {
-        const { data } = await api.fetchPosts();
+        const { data }  = await api.fetchPosts();
         console.log(data);
-        dispatch({type: FETCH_ALL, payload: data});  // what is the use of redux thunk?
+
+        if(data.message) {
+          // const { message } = data
+          // dispatch({type: "AUTH-WARNING", message})
+          console.log(data.message);
+        }
+        dispatch({type: FETCH_ALL, payload: data});
     } catch (error) {
         console.log(error);
     }

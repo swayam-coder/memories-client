@@ -3,8 +3,7 @@ import moment from 'moment';
 import Dropdown from './Dropdown';
 import { useDispatch } from 'react-redux';
 import { deletePost, likePost } from '../../../redux/actions/posts';
-
-export default function Post({ post, setcurrentid }) {
+export default function Post({ post, setcurrentid, feed }) {
     
     const changeCurrentid = () => {
         setcurrentid(post._id);
@@ -22,6 +21,14 @@ export default function Post({ post, setcurrentid }) {
     // if(post.selectedFile === " "){
     //     document.querySelector(".creator").style.color = "black";
     // }
+
+    const handleDelete = async () => {
+        dispatch(deletePost(post._id))
+    }
+
+    const handleLike = async () => {
+        dispatch(likePost(post._id, post))
+    }
 
     return (
         <>
@@ -57,7 +64,7 @@ export default function Post({ post, setcurrentid }) {
             <div className="card" style={{width: '18rem'}}>
                 <div style={{height: 150, overflow: "hidden"}}>
                     <img src={post.selectedFile} className="card-img-top" alt="..."/>
-                    <Dropdown changeCurrentid={changeCurrentid}/>
+                {!feed && <Dropdown changeCurrentid={changeCurrentid}/>}
                     <h4 className="card-title creator">By {post.creatorName}</h4>
                     <small className="createdOn">Created on {moment(post.createdAt).format('D/MM/YYYY, h:mm:ss a')}</small>
                 </div>
@@ -72,8 +79,8 @@ export default function Post({ post, setcurrentid }) {
                 </div>
                     <p className="card-text">{content}</p>
                     <div className="buttons">
-                        <button className="btn btn-outline-secondary btn-sm" style={{marginRight: '1rem'}} onClick={() => dispatch(likePost(post._id, post))}><i class="far fa-thumbs-up"></i>Like <small>{post.likes}</small></button>
-                        <button className="btn btn-danger btn-sm" onClick={() => dispatch(deletePost(post._id))}>Delete</button>
+                        <button className="btn btn-outline-secondary btn-sm" style={{marginRight: '1rem'}} onClick={handleLike}><i class="far fa-thumbs-up"></i>Like <small>{post.likes}</small></button>
+                        {!feed && <button className="btn btn-danger btn-sm" onClick={handleDelete}>Delete</button>}
                     </div>
                </div>
             </div>

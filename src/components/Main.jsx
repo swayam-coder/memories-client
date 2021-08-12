@@ -1,28 +1,40 @@
 import React from 'react'
-import Navbar from "./Navbar/navbar";
-import App from "./App";
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import SignUp from "./Auth/Signup"
-import Login from "./Auth/Login"
-import PrivateRoute from '../PrivateRoute/PrivateRoute';
-import Landing from "./Design/Landing"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Navbar from "../components/Navbar/navbar"
+import { App } from "./Lazycomponents/Lazycomponents";
+import { SignUp } from "./Lazycomponents/Lazycomponents"
+import { Login } from "./Lazycomponents/Lazycomponents"
+import { PrivateRoute } from "./Lazycomponents/Lazycomponents";
+import { Landing } from "./Lazycomponents/Lazycomponents"
+import { Profile } from "./Lazycomponents/Lazycomponents";
+import { User } from '../util/_localstorage';
 
 function Main() {
     return (
         <>
+        <React.Suspense fallback>
             <Router>
-            <Navbar />
-                <Switch>
-                    <Route exact path="/" component={Landing} />
-                    <Route exact path="/login">
-                        <Login />
-                    </Route>
-                    <Route exact path="/signup">
-                        <SignUp />
-                    </Route>
-                    <PrivateRoute exact path="/posts" component={App} />
-                </Switch>
+                <Navbar User={User}/>
+                    <Switch>
+                        <Route exact path="/" component={Landing} />
+                        <Route exact path="/login">
+                            <Login />
+                        </Route>
+                        <Route exact path="/signup">
+                            <SignUp />
+                        </Route>
+                        <PrivateRoute exact path="/posts">
+                            <App feed={true}/>
+                        </PrivateRoute>
+                        <PrivateRoute exact path="/myposts">
+                            <App feed={false}/>
+                        </PrivateRoute>
+                        <PrivateRoute path="/profile">
+                            <Profile User={User}/>
+                        </PrivateRoute>
+                    </Switch>
             </Router>
+            </React.Suspense>
         </>
     )
 }
