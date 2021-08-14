@@ -1,7 +1,7 @@
 const axios = require("axios");
+const baseURL = process.env.BASE_URL
 
-// const url = 'http://localhost:5000/posts';
-const API = axios.create({ baseURL : process.env.BASE_URL});
+const API = axios.create({ baseURL });
 
 API.interceptors.request.use((req) => {
     if (localStorage.getItem('profile')) {
