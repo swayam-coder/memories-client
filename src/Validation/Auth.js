@@ -15,4 +15,9 @@ const schema1 = yup.object().shape({
     password: yup.string().required("Password is required")
 })
 
-export  {schema, schema1};
+const changePasswordSchema = yup.object().shape({
+    password: yup.string().required("This field is required"),
+    confirmpassword: yup.string().required("This field is required").oneOf([yup.ref("password"), null], "Passwords don't match")
+})
+
+export  {schema, schema1, changePasswordSchema};

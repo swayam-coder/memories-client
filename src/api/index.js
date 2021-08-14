@@ -20,3 +20,5 @@ export const likePost = (id, updatedPost) => API.patch(`/posts/${id}/updatelikes
 export const signup = (formData) => API.post("/auth/signup", formData, {headers:{"Content-Type" : "application/json"}}).then(console.log("signup request successfull ")).catch(error => console.log(error.response.data));
 export const login = (formData) => API.post("/auth/login", formData, {headers:{"Content-Type" : 'application/json'}}).then(console.log("login request successfull ")).catch(error => console.log(error.response.data));
 export const refresh = (refreshToken) => API.post("/auth/refreshToken", { refreshToken }, {headers:{"Content-Type" : 'application/json'}}).then(console.log("refresh request successfull ")).catch(error => console.log(error.response.data));
+export const confirmPassword = (password) => API.post("/auth/confirmpassword", { password }).then(console.log("confirm password request successfull ")).catch(error => console.log(error.response.data));
+export const verifyToken = (id, token) => API.post("/auth/passwordtokenverify", { id, token }).then(console.log("token verification request successfull ")).catch(error => console.log(error.response.data));

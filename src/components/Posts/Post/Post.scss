@@ -1,0 +1,28 @@
+.buttons {
+    text-align: center;
+}
+
+.buttons > Button{
+    margin: 10px;
+}
+
+.createdOn {
+    position: relative;
+    bottom: 260px;
+    color: white;
+    display: block;
+    margin: 0px 20px;
+}
+
+.creator {
+    position: relative;
+    bottom: 270px;
+    color: white;
+    margin: 18px;
+    display: inline;
+}
+
+.title-tags{
+    display: flex;
+    justify-content: space-between;
+}

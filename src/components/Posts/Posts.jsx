@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import Post from './Post/Post';
 import { CircularProgress } from '@material-ui/core';
+import "./Posts.scss"
 
 export default function Posts({ setcurrentid, feed }) {
     const posts = useSelector(state => state.posts);

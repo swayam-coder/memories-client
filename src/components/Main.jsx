@@ -7,14 +7,17 @@ import { Login } from "./Lazycomponents/Lazycomponents"
 import { PrivateRoute } from "./Lazycomponents/Lazycomponents";
 import { Landing } from "./Lazycomponents/Lazycomponents"
 import { Profile } from "./Lazycomponents/Lazycomponents";
-import { User } from '../util/_localstorage';
+import { PasswordChange } from "./Lazycomponents/Lazycomponents";
+import { useSelector } from 'react-redux';
+import "../sass-styles/global.scss"
 
 function Main() {
+    const url = useSelector(state => state.authdata)
     return (
         <>
         <React.Suspense fallback>
             <Router>
-                <Navbar User={User}/>
+                <Navbar />
                     <Switch>
                         <Route exact path="/" component={Landing} />
                         <Route exact path="/login">
@@ -30,7 +33,10 @@ function Main() {
                             <App feed={false}/>
                         </PrivateRoute>
                         <PrivateRoute path="/profile">
-                            <Profile User={User}/>
+                            <Profile />
+                        </PrivateRoute>
+                        <PrivateRoute exact path={`/${url}`}>
+                            <PasswordChange />
                         </PrivateRoute>
                     </Switch>
             </Router>

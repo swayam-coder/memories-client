@@ -1,4 +1,4 @@
-import { AUTH, REFRESH, LOGOUT } from "../constants/auth";
+import { AUTH, REFRESH, LOGOUT, RESET, URLSTATUS } from "../constants/auth";
 
 const authProvider = (state = { authdata : null }, action) => {
     switch (action.type) {
@@ -14,6 +14,10 @@ const authProvider = (state = { authdata : null }, action) => {
             const obj = JSON.parse(localStorage.getItem("profile"))
             localStorage.setItem('profile', JSON.stringify({ ...obj, AccessToken: action.payload}));
             return {...state}
+        case RESET: 
+            return { authdata: action.payload }
+        case URLSTATUS:
+            return { authdata: action.payload }
         default:
             return state;
     }
