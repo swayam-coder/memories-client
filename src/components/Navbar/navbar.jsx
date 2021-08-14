@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { NavLink, useLocation, useHistory } from 'react-router-dom'
+import "./navbar.scss"
+import { User } from '../../util/_localstorage';
 
-export default function Navbar({User}) {
+export default function Navbar() {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
 
     const history = useHistory();
@@ -63,7 +65,7 @@ export default function Navbar({User}) {
           
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
             <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><NavLink class="dropdown-item" to={`/profile/${User?.id}`}>Profile</NavLink></li>
             <li><hr class="dropdown-divider" /></li>
             <li><button class="dropdown-item" href="#" onClick={logout}>Sign out</button></li>
           </ul>

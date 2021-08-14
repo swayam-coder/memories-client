@@ -3,6 +3,8 @@ import moment from 'moment';
 import Dropdown from './Dropdown';
 import { useDispatch } from 'react-redux';
 import { deletePost, likePost } from '../../../redux/actions/posts';
+import "./Post.scss"
+
 export default function Post({ post, setcurrentid, feed }) {
     
     const changeCurrentid = () => {

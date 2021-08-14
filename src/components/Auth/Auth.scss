@@ -18,14 +18,22 @@ label {
 }
 
 .Label {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .signup {
-    text-align: center;
+  text-align: center;
 }
 
 .small {
-    display: block;
-    margin-top: 10px;
+  display: block;
+  margin-top: 10px;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.buttons > Button {
+  margin: 10px;
 }

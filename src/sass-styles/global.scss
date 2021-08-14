@@ -1,0 +1,9 @@
+* {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+@media all and (max-width: 540px) {
+    .main {
+        flex-direction: column-reverse;
+    }
+}

@@ -7,5 +7,6 @@ const Profile = lazy(() => import("../Profile/Profile"))
 const App = lazy(() => import("../App"))
 const Navbar = lazy(() => import("../Navbar/navbar"))
 const PrivateRoute = lazy(() => import("../../PrivateRoute/PrivateRoute"))
+const PasswordChange = lazy(() => import("../../components/Auth/PasswordChange"))
 
-export { Login, SignUp, Landing, Profile, App, Navbar, PrivateRoute }
+export { Login, SignUp, Landing, Profile, App, Navbar, PrivateRoute, PasswordChange }

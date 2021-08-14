@@ -1,0 +1,14 @@
+.profile{
+    height: 90vh;
+    position: relative;
+    #{&}-wide{
+        top: 100px;
+    }
+    #{&}-thin{
+        top: 200px;
+    }
+}
+
+.Label1{
+    display: block;
+}

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createPost, updatePost } from "../../redux/actions/posts";
 import Paper from '@material-ui/core/Paper';
 import { useStyles } from "./styles";
+import "./Form.scss"
 
 export default function Form({currentid, setcurrentid}) {
     const [postData, setPostData] = useState({creatorName: ' ', name: ' ', tags: [ ], content: ' ', selectedFile: ' '});
@@ -63,7 +64,7 @@ export default function Form({currentid, setcurrentid}) {
                 />
             </div>
 
-            {/*<div class="mb-3">  
+            {/* <div class="mb-3">  
                 <label for="formFileSm" class="form-label">Small file input example</label>
                 <input class="form-control form-control-sm" id="formFileSm" type="file">
                 <div> */}  
@@ -73,8 +74,7 @@ export default function Form({currentid, setcurrentid}) {
             <button type="submit" class="btn btn-dark">{currentid ? "Edit": "Add"} Memory</button>
             <button type="button" class="btn btn-warning" style={{marginLeft: 10}} onClick={clearForm}>Clear</button>
             <small style={{display: "block",marginTop: 15}}>To delete or make changes in your posts go to My Posts section</small>
-        </form> 
-        
+        </form>
         </Paper>
         </div>
     )

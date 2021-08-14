@@ -10,7 +10,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { schema1 } from "../../Validation/Auth";
 import { useSelector } from "react-redux";
-import './Auth.css';
+import { sociallogin } from '../../redux/actions/auth';
+import './Auth.scss';
 
 const useStyles = makeStyles((theme) => ({ 
     root: {
@@ -77,13 +78,11 @@ export default function Login() {
     }, [formData])
 
     const googleSuccess = async (res) => {
-        
-        const token = res?.tokenId;
+        const AccessToken = res?.tokenId;
         const result = res?.profileObj;
         
         try {
-            dispatch({type: "AUTH", payload: {token, result}});
-            history.push("/posts");
+            dispatch(sociallogin(AccessToken, result, history));
         } catch (error) {
             console.log(error);
         }
