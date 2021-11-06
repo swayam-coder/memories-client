@@ -16,7 +16,7 @@ Simple ecommerce app built by using React, Express, MongoDB.
 * Authentication using JWTs and Social Login using Google OAuth
 * Account creation and edit
 
-## Technolgies Used
+## Technologies Used
 
 * ReactJS + Redux + Redux-Thunk
 * Bootstrap, SCSS Modules
