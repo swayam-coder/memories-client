@@ -18,8 +18,10 @@ Simple ecommerce app built by using React, Express, MongoDB.
 
 ## Technolgies Used
 
-* ReactJS
+* ReactJS + Redux + Redux-Thunk
 * ExpressJS
+* React Hook Forms and Yup Schema Validation
+* Axios
 * MongoDB (Mongoose ODM)
 * jsonwebtoken and "react-google-login" 
 
