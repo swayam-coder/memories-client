@@ -42,8 +42,3 @@ $ npm install
 ```sh
 $ npm start 
 ```
-
-## Build the project
-```sh
-$ npm run build
-```
