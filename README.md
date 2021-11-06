@@ -1,5 +1,6 @@
 # Memories | MERN Stack Social Media App
-Simple ecommerce app built by using React, Express, MongoDB.
+#### Simple ecommerce app built by using React, Express, MongoDB.
+#### This is the server-side code of my Memories project, to see client side code, go to: https://github.com/swayam-coder/memories-server
 
 <!-- ### [Live demo](https://salinaka-ecommerce.web.app/) -->
 <!-- 
