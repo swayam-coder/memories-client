@@ -29,7 +29,7 @@ Simple ecommerce app built by using React, Express, MongoDB.
 ## Run Locally
 ### 1. Clone the repository
 ```sh
-$ npm clone 
+$ git clone https://github.com/swayam-coder/memories-client.git 
 ```
 
 ### 2. Install Dependencies
