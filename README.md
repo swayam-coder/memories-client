@@ -1,5 +1,6 @@
 # Memories | MERN Stack Social Media App
 #### Simple ecommerce app built by using React, Express, MongoDB.
+#### Deployed Site: https://memories-project-swayam.netlify.app/
 #### This is the server-side code of my Memories project, to see server side code, go to: https://github.com/swayam-coder/memories-server
 
 <!-- ### [Live demo](https://salinaka-ecommerce.web.app/) -->
