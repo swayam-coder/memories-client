@@ -6,18 +6,23 @@ import "./Posts.scss"
 
 export default function Posts({ setcurrentid, feed }) {
     const posts = useSelector(state => state.posts);
-    console.log(posts);
     return (
         <>
-        <div className="col-md-9">
-            <div className="row">
-            {posts.map((post) => (
-                <div className="col-sm-4">
-                    <Post post={post} setcurrentid={setcurrentid} feed={feed}/>
-                </div>
-            ))}
-            </div>
-        </div>
+        {
+            (posts.length !== 0) ? 
+                <div className="col-md-9">
+                    <div className="row">
+                    {posts.map((post) => (
+                        <div className="col-sm-4">
+                            <Post post={post} setcurrentid={setcurrentid} feed={feed}/>
+                        </div>
+                    ))}
+                    </div>
+                </div> 
+                : 
+                <CircularProgress />
+        }
+        
         </>
     )
 }

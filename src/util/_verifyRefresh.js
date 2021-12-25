@@ -6,7 +6,7 @@ const checkToken = (dispatch) => {
     if(!AccessToken)
             return
 
-    jwt.verify(AccessToken, process.env.ACCESS_TOKEN_SECRET, async (err, response) => {
+    jwt.verify(AccessToken, process.env.REACT_APP_ACCESS_TOKEN_SECRET, async (err, response) => {
         if(err) {
             await dispatch(refresh(RefreshToken))
         }

@@ -1,0 +1,19 @@
+.profile {
+  height: 90vh;
+  position: relative;
+  background-color: #212529;
+}
+.profile .profile-wide {
+  top: 100px;
+}
+.profile .profile-thin {
+  top: 200px;
+}
+.profile .profile-warning, .profile .profile-success {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bolder;
+}
+.Label1 {
+  display: block;
+}/*# sourceMappingURL=Profile.css.map */

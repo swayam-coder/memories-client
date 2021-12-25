@@ -3,3 +3,15 @@
 .footersection {
   background-color: get-color("dark");
 }
+
+.footer-socials {
+  margin-top: 10px;
+}
+
+.footer-container {
+  margin: 30px 80px 30px 80px;
+  text-align: center;
+  a {
+    padding: 10px;
+  }
+}

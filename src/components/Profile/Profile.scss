@@ -1,11 +1,20 @@
-.profile{
+.profile {
     height: 90vh;
     position: relative;
-    #{&}-wide{
+    background-color: #212529;
+    #{&}-wide{     // #{&} means the profile-wide will only have the properties written inside it
         top: 100px;
     }
     #{&}-thin{
         top: 200px;
+    }
+    #{&}-warning, #{&}-success{
+        text-align: center;
+        margin-top: 10px;
+        font-weight: bolder;
+    }
+    #{&}-social{
+        
     }
 }
 

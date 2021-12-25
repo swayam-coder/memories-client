@@ -3,8 +3,10 @@ import {FETCH_ALL,FETCH_FEED_ALL, CREATE, UPDATE, DELETE, LIKE} from "../constan
 const postsDetails = (posts = [], action) => {
     switch (action.type) {
         case FETCH_ALL:
+            posts = action.payload
             return action.payload;
         case FETCH_FEED_ALL:
+            posts = action.payload
             return action.payload;
         case CREATE:
             return [...posts, action.payload];

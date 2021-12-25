@@ -1,25 +1,25 @@
+// eslint-disable-next-line no-unused-vars
 import { AUTH, REFRESH, LOGOUT, RESET, URLSTATUS } from "../constants/auth";
 
-const authProvider = (state = { authdata : null }, action) => {
+const reducerobj = { authdata : null, warnings: null, reseturl: null, URLstatus: null, successmsgs: null }
+
+const authProvider = (auth = reducerobj, action) => {
     switch (action.type) {
         case AUTH:
             localStorage.setItem('profile', JSON.stringify({ ...action?.payload }));
-            return {...state, authdata: action.payload}
-        // case "AUTH-WARNING":
-        //     return action.payload;
+            return {...auth, authdata: action.payload}
         case LOGOUT:
             localStorage.clear();
-            return {...state, authdata: null}
-        case REFRESH:
-            const obj = JSON.parse(localStorage.getItem("profile"))
-            localStorage.setItem('profile', JSON.stringify({ ...obj, AccessToken: action.payload}));
-            return {...state}
-        case RESET: 
-            return { authdata: action.payload }
+            return {...auth, authdata: null}
+        // case REFRESH:
+        //     localStorage.setItem('profile', {...JSON.stringify(...JSON.parse(localStorage.getItem("profile"), AccessToken: action.payload})
+        //     return {...auth, authdata: {...auth?.authdata, AccessToken: action.payload}}
+        case RESET:
+            return {...auth, reseturl: action.payload}
         case URLSTATUS:
-            return { authdata: action.payload }
+            return {...auth, URLstatus: action.payload}
         default:
-            return state;
+            return auth;
     }
 }
 

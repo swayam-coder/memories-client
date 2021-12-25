@@ -8,8 +8,11 @@ import { PrivateRoute } from "./Lazycomponents/Lazycomponents";
 import { Landing } from "./Lazycomponents/Lazycomponents"
 import { Profile } from "./Lazycomponents/Lazycomponents";
 import { PasswordChange } from "./Lazycomponents/Lazycomponents";
+import { Post } from "./Lazycomponents/Lazycomponents";
 import { useSelector } from 'react-redux';
 import "../sass-styles/global.scss"
+import ErrorModal from '../messages/ErrorModal';
+import SuccessModal from '../messages/SuccessModal';
 
 function Main() {
     const url = useSelector(state => state.authdata)
@@ -29,6 +32,9 @@ function Main() {
                         <PrivateRoute exact path="/posts">
                             <App feed={true}/>
                         </PrivateRoute>
+                        <PrivateRoute path="/post">
+                            <Post feed={true}/>
+                        </PrivateRoute>
                         <PrivateRoute exact path="/myposts">
                             <App feed={false}/>
                         </PrivateRoute>
@@ -39,6 +45,8 @@ function Main() {
                             <PasswordChange />
                         </PrivateRoute>
                     </Switch>
+                <ErrorModal />
+                <SuccessModal />
             </Router>
             </React.Suspense>
         </>

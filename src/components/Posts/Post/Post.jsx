@@ -3,10 +3,11 @@ import moment from 'moment';
 import Dropdown from './Dropdown';
 import { useDispatch } from 'react-redux';
 import { deletePost, likePost } from '../../../redux/actions/posts';
+import { useHistory } from 'react-router-dom';
 import "./Post.scss"
 
 export default function Post({ post, setcurrentid, feed }) {
-    
+    const history = useHistory();
     const changeCurrentid = () => {
         setcurrentid(post._id);
     }
@@ -30,6 +31,10 @@ export default function Post({ post, setcurrentid, feed }) {
 
     const handleLike = async () => {
         dispatch(likePost(post._id, post))
+    }
+
+    const handleClick = async () => {
+        history.push(`/post/${post._id}`)
     }
 
     return (
@@ -63,6 +68,7 @@ export default function Post({ post, setcurrentid, feed }) {
                     </div> */}
                 {/* </div> */} 
             {/* </div> */} 
+            <button className="btn" onClick={handleClick}>
             <div className="card" style={{width: '18rem'}}>
                 <div style={{height: 150, overflow: "hidden"}}>
                     <img src={post.selectedFile} className="card-img-top" alt="..."/>
@@ -86,7 +92,7 @@ export default function Post({ post, setcurrentid, feed }) {
                     </div>
                </div>
             </div>
-
+            </button>
         </>
     )
 }

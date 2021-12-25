@@ -12,7 +12,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { schema } from "../../Validation/Auth";
 import { useSelector } from "react-redux";
-import { sociallogin } from '../../redux/actions/auth';
+import { sociallogin, socialsignupfailure} from '../../redux/actions/auth';
 import './Auth.scss';
 
 const useStyles = makeStyles((theme) => ({ 
@@ -56,6 +56,7 @@ export default function SignUp() {
     const dispatch = useDispatch();
     const history = useHistory();
     const [formData, setFormData] = useState({firstName: " ", lastName: " ", email: " ", password: null})
+    const errormessage = useSelector(msg => msg.warnings)
     // const authwarning = useSelector(state => state.state?.authdata)
 
     const { register, handleSubmit, formState:{ errors } } = useForm({
@@ -101,14 +102,14 @@ export default function SignUp() {
     }
 
     const googleFailure = (res) => {
-        console.log(res);
+        dispatch(socialsignupfailure(res, history));
     }
 
     return (
         <div className="authbackground_dark">
             <Paper elevation={3} className={classes.root1}>
-            <h3 className="signup">{"SignUp"}</h3>
-
+            {errormessage && <p className="text-danger auth-warning">{errormessage.message}</p>}
+            <h3 className="signup">SignUp</h3>
             <form style={{width: "70%", margin: "auto"}} onSubmit={handleSubmit(onSubmit)}>
                 {/* name fields */}
                 <NameInput formData={formData} register={register} errors={errors} />

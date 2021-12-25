@@ -1,0 +1,11 @@
+.inputForm {
+  width: 80%;
+  margin: auto;
+}
+
+.post-error {
+  margin-bottom: 0;
+  position: relative;
+  bottom: 10px;
+  font-weight: bolder;
+}/*# sourceMappingURL=Form.css.map */

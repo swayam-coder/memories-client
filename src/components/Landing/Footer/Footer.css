@@ -1,4 +1,15 @@
 .footersection {
   background-color: #212529;
 }
-/*# sourceMappingURL=Footer.css.map */
+
+.footer-socials {
+  margin-top: 10px;
+}
+
+.footer-container {
+  margin: 30px 80px 30px 80px;
+  text-align: center;
+}
+.footer-container a {
+  padding: 10px;
+}/*# sourceMappingURL=Footer.css.map */

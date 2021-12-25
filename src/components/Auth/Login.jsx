@@ -10,7 +10,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { schema1 } from "../../Validation/Auth";
 import { useSelector } from "react-redux";
-import { sociallogin } from '../../redux/actions/auth';
+import { sociallogin, socialloginfailure } from '../../redux/actions/auth';
 import './Auth.scss';
 
 const useStyles = makeStyles((theme) => ({ 
@@ -45,6 +45,8 @@ export default function Login() {
     const history = useHistory();
     const [formData, setFormData] = useState({email: " ", password: null})
     const [viewPassword, setViewPassword] = useState(false);
+    const errormessage = useSelector(messageProvider => messageProvider.warnings)
+
     // const authwarning = useSelector(state => state.state?.authdata)
 
     const { register, handleSubmit, formState:{ errors } } = useForm({
@@ -90,12 +92,17 @@ export default function Login() {
     }
 
     const googleFailure = (res) => {
-        console.log(res);
+        dispatch(socialloginfailure(res, history))
     }
 
+    console.log(errormessage);
+
     return (
+        <>
         <div className="authbackground_dark">
+        
             <Paper elevation={3} className={classes.root}>
+            {errormessage && <p className="text-danger auth-warning">{errormessage.message}</p>}
             <h3 className="signup">Login</h3>
 
             <form style={{width: "70%", margin: "auto"}} onSubmit={handleSubmit(onSubmit)}>
@@ -140,5 +147,6 @@ export default function Login() {
             </div>
             </Paper>
         </div>
+        </>
     )
 }

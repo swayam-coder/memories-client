@@ -1,0 +1,8 @@
+.brandName {
+  text-decoration: none;
+}
+
+.brandName > h2 {
+  color: white;
+  margin-bottom: 0px;
+}/*# sourceMappingURL=navbar.css.map */

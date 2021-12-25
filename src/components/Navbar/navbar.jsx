@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux';
-import { NavLink, useLocation, useHistory } from 'react-router-dom'
-import "./navbar.scss"
+import { NavLink, useLocation, useHistory, Redirect } from 'react-router-dom'
+import "./navbar.css"
 import { User } from '../../util/_localstorage';
 
 export default function Navbar() {
@@ -13,7 +13,7 @@ export default function Navbar() {
 
     const logout = () => {
       dispatch({type: "LOGOUT"});
-      history.push("/login");
+      history.replace('/login')
       setUser(null);
     }
 
@@ -28,7 +28,7 @@ export default function Navbar() {
     
     <div className="brandLink d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
     
-      <NavLink className="brandName" to={user?.result ? "/posts" : "/"}><h2 className="navbar-brand">Memories</h2></NavLink>
+      <NavLink className="brandName" to={user?.result ? "/posts" : "/"}><h2 className="navbar-brand" style={{marginRight: 0}}>Memories</h2></NavLink>
     
         <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><NavLink to="/myposts" className="nav-link px-2 text-white">{user?.result && "My Posts"}</NavLink></li>
@@ -40,7 +40,7 @@ export default function Navbar() {
         <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
           <input list= "users" type="search" className="form-control form-control-dark" placeholder="Search other users..." aria-label="Search" />
           <datalist id="users" style={{display: "none"}}>
-            <option  />
+            <option />
           </datalist>
         </form>
         </>

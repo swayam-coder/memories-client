@@ -9,6 +9,7 @@ import "./Form.scss"
 export default function Form({currentid, setcurrentid}) {
     const [postData, setPostData] = useState({creatorName: ' ', name: ' ', tags: [ ], content: ' ', selectedFile: ' '});
     const modifiedpost = useSelector(state => currentid ? state.posts.find((p) => p._id === currentid): null)
+    const errormessage = useSelector(msg => msg.warnings)
 
     const dispatch = useDispatch();
     const classes = useStyles();
@@ -37,7 +38,9 @@ export default function Form({currentid, setcurrentid}) {
 
     return (
         <div className="col-md-3">
+        {errormessage && <p className="text-danger post-error">{errormessage.message}</p>}
         <Paper elevation={3} className={classes.root}>
+        
         <h4 style={{textAlign: "center"}}>Create a Memory</h4>
         <form onSubmit={handleSubmit} className="inputForm">
             <div className="mb-3">

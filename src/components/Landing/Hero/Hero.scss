@@ -16,7 +16,12 @@
       height: 100vh;
     }
   }
+  @media all and (max-width: 992px) {
+    &content {
+      text-align: center;
+    }
+  }
   &details {
-    margin-top: auto;
+    justify-content: center;
   }
 }

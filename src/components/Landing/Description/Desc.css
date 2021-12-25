@@ -1,16 +1,15 @@
 .descsection {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 @media all and (min-width: 992px) {
   .descsection {
     height: 100vh;
   }
 }
-
 .desccontent {
   margin: auto;
 }
-/*# sourceMappingURL=Desc.css.map */
+
+.desc-images > img {
+  padding: 10px;
+}/*# sourceMappingURL=Desc.css.map */
