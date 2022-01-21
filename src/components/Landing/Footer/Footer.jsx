@@ -26,7 +26,7 @@ export default function Footer() {
                             <i class="fab fa-github"></i> Github
                         </a> 
                         <a 
-                            href="swayam14feb@gmail.com" 
+                            href="mailto:swayam14feb@gmail.com" 
                             target="_blank" 
                             rel="noopener noreferrer" 
                             style={{textDecoration: "none", color: "white"}}
