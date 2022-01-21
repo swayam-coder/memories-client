@@ -26,7 +26,7 @@ jobs:
       run: npm ci --only=production
     
     - name: Generate build
-      run: npm run build --if-present NODE_ENV=production
+      run: npm run build --if-present
 
     - name: Deploy to netlify
       uses: South-Paw/action-netlify-deploy@v1.2.0  #this will do everything to set up the netlify cli on the server
