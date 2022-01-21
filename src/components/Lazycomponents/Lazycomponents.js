@@ -6,7 +6,7 @@ const Landing = lazy(() => import("../Landing/Landing"))
 const Profile = lazy(() => import("../Profile/Profile"))
 const App = lazy(() => import("../App"))
 const Navbar = lazy(() => import("../Navbar/navbar"))
-const PrivateRoute = lazy(() => import("../../PrivateRoute/PrivateRoute"))
+const PrivateRoute = lazy(() => import("../../private-route/PrivateRoute"))
 const PasswordChange = lazy(() => import("../../components/Auth/PasswordChange"))
 const Post = lazy(() => import("../../components/PostDetail/PostDetail"))
 
