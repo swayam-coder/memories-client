@@ -32,6 +32,7 @@ jobs:
       uses: South-Paw/action-netlify-deploy@v1.2.0  #this will do everything to set up the netlify cli on the server
       env: 
         NODE_ENV: development
+        CI: false
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
